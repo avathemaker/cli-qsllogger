@@ -3,20 +3,14 @@ import datetime
 import func 
 from globle import fname 
 from globle import f
+import globle
 time =str( datetime.datetime.now())
-callsign = "call"
-opater = "kr4lvm"
-fre = 7.200
-fname = "file1"
-##f= open("{fname}.adi","a")
-
-
 #main 
-print("name the file")
-fname =input()
-f= open(fname,"a")
-f.write("\n")
+##print("name the file")
+##globle.fnameinput()
 
+f.write("\n")
+##f.write("test    ")
 while True:
     func.call()
     func.freq()

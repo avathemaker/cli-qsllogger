@@ -1,10 +1,6 @@
-##from main import f 
+ 
 from globle import f
-def start():
-    print("name the file")
-    fname =input()
-    f= open(fname,"a")
-    f.write("\n")
+
 def call():
  print ("what is the callsign")
  callsign = input()
@@ -12,7 +8,8 @@ def call():
  right = input()
  if right =="y":
    f.write(callsign)
-    
+   ##print("working")
+   ##f.write("working")
  else:
          call()
 def freq():
