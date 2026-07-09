@@ -7,7 +7,9 @@ def call():
  print ("is the right y or n")
  right = input()
  if right =="y":
-   f.write(callsign)
+   cn = len(callsign)
+   callsignadi = f"<call:{cn}>{callsign}\n"
+   f.write(callsignadi)
    ##print("working")
    ##f.write("working")
  else:
@@ -18,8 +20,8 @@ def freq():
     print ("is this righ y or n")
     right = input()
     if right == "y":
-        f.write("  ")
-        f.write(fre)
+        adifre = f"<freq:6>{fre}\n"
+        f.write(adifre)
     if right == "n":
         freq()
 
@@ -29,8 +31,9 @@ def rsts():
     print("is this right y or n")
     right = input()
     if right == "y":
-        f.write("  ")
-        f.write(s)
+        cn = len(s)
+        sr= f"<rst_sent:{cn}>{s}\n"
+        f.write(sr)
     if right == "n": 
            rsts()
 def rstr():
