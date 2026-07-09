@@ -1,60 +1,27 @@
 import datetime
-
-
+##from func import call
+import func 
+from globle import fname 
+from globle import f
 time =str( datetime.datetime.now())
 callsign = "call"
 opater = "kr4lvm"
 fre = 7.200
-f= open("test3.txt","a")
-def call():
- print ("what is the callsign")
- callsign = input()
- print ("is the right y or n")
- right = input()
- if right =="y":
-    f.write(callsign)
-    
- else:
-         call()
-def freq():
-    print ("what the the freq")
-    fre = input()
-    print ("is this righ y or n")
-    right = input()
-    if right == "y":
-        f.write("  ")
-        f.write(fre)
-    if right == "n":
-        freq()
+fname = "file1"
+##f= open("{fname}.adi","a")
 
-def rsts():
-    print("what is the rsts")
-    s = input()
-    print("is this right y or n")
-    right = input()
-    if right == "y":
-        f.write("  ")
-        f.write(s)
-    if right == "n": 
-           rsts()
-def rstr():
-    print("what is the rstr")
-    s = input()
-    print("is this right y or n")
-    right = input()
-    if right == "y":
-       ## print("good")
-        f.write(" ")
-        f.write(s)
-    if right == "n":
-        rstr()
-f.write("\n")        
+
+#main 
+print("name the file")
+fname =input()
+f= open(fname,"a")
+f.write("\n")
+
 while True:
-   ## print(time)
-    call()
-    freq()
-    rsts()
-    rstr()
+    func.call()
+    func.freq()
+    func.rsts()
+    func.rstr()
     f.write("   ")
     f.write(time)
     f.write("\n")
