@@ -43,7 +43,8 @@ def rstr():
     right = input()
     if right == "y":
        ## print("good")
-        f.write(" ")
-        f.write(s)
+        cn = len(s)
+        sr= f"<rst_rcvd:{cn}>{s}\n"
+        f.write(sr)
     if right == "n":
         rstr()

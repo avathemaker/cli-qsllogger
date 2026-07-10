@@ -4,14 +4,17 @@ import func
 from globle import fname 
 from globle import f
 import globle
-time = str(datetime.datetime.now())
-
+time = (datetime.datetime.now(datetime.timezone.utc))
+year = str(time.year)
+month = str(time.strftime('%m'))
+day = str(time.day)
 #main 
 newfile = input("is this a new file")
-if newfile == "Y":
+if newfile == "y":
    ## usercall = input("what is your call")
-    f.write(" <ADIF_VER:5>3.1.7")
-
+    f.write(" <ADIF_VER:5>3.1.7\n")
+    
+    f.write("<EOH>\n")
     
 f.write("\n")
 while True:
@@ -20,6 +23,6 @@ while True:
     func.rsts()
     func.rstr()
     f.write("   ")
-    f.write(time)
+    f.write(f"<qso_date:8>:{year}{month}{day}")
     f.write("\n")
 
