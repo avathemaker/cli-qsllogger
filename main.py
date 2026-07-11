@@ -18,6 +18,7 @@ second = str(time.strftime('%S'))
 newfile = input("is this a new file:")
 if newfile == "y":
     f.write(" <ADIF_VER:5>3.1.7\n")
+    f.write(f"<CREATED_TIMESTAMP:15>{year}{month}{day} {hour}{minute}{second}")
     f.write("<EOH>\n")
     
 #user config 
@@ -42,7 +43,7 @@ while True:
 
     #write text 
     f.write(f"<operator:{usercalln}>{usercall}\n")
-    f.write(f"<qso_date:8>:{year}{month}{day}\n")
+    f.write(f"<qso_date:8>{year}{month}{day}\n")
     f.write(f"<time_on:6>{hour}{minute}{second}\n")
     f.write(f"<time_off:6>{hour}{minute}{second}\n")
     f.write(f"<qso_date_off:8>{year}{month}{day}\n")
