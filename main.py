@@ -29,23 +29,36 @@ f.write("\n")
 
 #main loop
 while True:
-    func.call()
-    func.freq()
-    func.rsts()
-    func.rstr()
-    func.mode() 
+    #cli input loop
+    cliinput = input("...")
+
+    if cliinput == "log":
+#logg qsl 
+        func.call()
+        func.freq()
+        func.rsts()
+        func.rstr()
+        func.mode() 
 
     #testing
-   ##print(hour)
-   ## print(minute)
-   ## print(second)
+   ##   print(hour)
+   ##   print(minute)
+   ##   print(second)
 
 
     #write text 
-    f.write(f"<operator:{usercalln}>{usercall}\n")
-    f.write(f"<qso_date:8>{year}{month}{day}\n")
-    f.write(f"<time_on:6>{hour}{minute}{second}\n")
-    f.write(f"<time_off:6>{hour}{minute}{second}\n")
-    f.write(f"<qso_date_off:8>{year}{month}{day}\n")
-    f.write("<eor>")
-    f.write("\n")
+        f.write(f"<operator:{usercalln}>{usercall}\n")
+        f.write(f"<qso_date:8>{year}{month}{day}\n")
+        f.write(f"<time_on:6>{hour}{minute}{second}\n")
+        f.write(f"<time_off:6>{hour}{minute}{second}\n")
+        f.write(f"<qso_date_off:8>{year}{month}{day}\n")
+        f.write("<eor>")
+        f.write("\n")
+
+#help 
+    elif cliinput == "help":
+        func.help()
+
+    elif cliinput == "exit":
+        print("exit cli logger")
+        exit()

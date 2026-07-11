@@ -99,3 +99,8 @@ def mode():
         f.write("/n")
     if right == "n":
         mode()
+
+
+def help():
+    print("use log to log qso\n")
+    print("print this\n")
