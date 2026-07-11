@@ -4,8 +4,9 @@ import func
 from globle import fname 
 from globle import f
 import globle
-
-
+import json
+usercall = "user"
+usercalln = len(usercall)
 #time 
 time = (datetime.datetime.now(datetime.timezone.utc))#get time in utc
 year = str(time.year)
@@ -21,32 +22,30 @@ if newfile == "y":
     f.write(f"<CREATED_TIMESTAMP:15>{year}{month}{day} {hour}{minute}{second}")
     f.write("<EOH>\n")
     
-#user config 
-usercall = input("what is your call \n")
-usercalln = len(usercall)
-f.write("\n")
 
 
 #main loop
 while True:
     #cli input loop
     cliinput = input("...")
+    
+    if cliinput == "user":
+        filename = input("what is your user name")
+        userfile = open(filename,"r")
+        usercall = userfile.readline()
+        print(usercall)
+        
 
-    if cliinput == "log":
-#logg qsl 
-        func.call()
-        func.freq()
-        func.rsts()
-        func.rstr()
-        func.mode() 
-
-    #testing
-   ##   print(hour)
-   ##   print(minute)
-   ##   print(second)
-
-
-    #write text 
+#help 
+    elif cliinput == "help":
+        func.help()
+#exit 
+    elif cliinput == "exit":
+        print("exit cli logger")
+        f.close()
+        exit()
+        
+    elif cliinput == "end":
         f.write(f"<operator:{usercalln}>{usercall}\n")
         f.write(f"<qso_date:8>{year}{month}{day}\n")
         f.write(f"<time_on:6>{hour}{minute}{second}\n")
@@ -54,11 +53,40 @@ while True:
         f.write(f"<qso_date_off:8>{year}{month}{day}\n")
         f.write("<eor>")
         f.write("\n")
+    elif cliinput == "call":
+        func.call()
 
-#help 
-    elif cliinput == "help":
-        func.help()
+    elif cliinput == "fr":
+        func.freq()
 
-    elif cliinput == "exit":
-        print("exit cli logger")
-        exit()
+    elif cliinput == "mode":
+        func.mode()
+    elif cliinput == "sr":
+        func.rsts()
+        func.rstr()
+    elif cliinput == "log":
+        #print(usercall)
+        func.call()
+        func.freq()
+        func.rsts()
+        func.rstr()
+        func.mode()
+        f.write(f"<operator:{usercalln}>{usercall}\n")
+        f.write(f"<qso_date:8>{year}{month}{day}\n")
+        f.write(f"<time_on:6>{hour}{minute}{second}\n")
+        f.write(f"<time_off:6>{hour}{minute}{second}\n")
+        f.write(f"<qso_date_off:8>{year}{month}{day}\n")
+        f.write("<eor>")
+        f.write("\n")
+    elif cliinput == "usersetup":
+        username = input("what is the name of the user")
+        callsign = input("what is your call")
+        grid = input("what is your grid sqare")
+        write = str(f"{callsign}")
+        userfile = open(username, "x") 
+        userfile.write(write)
+        print("user saved")
+ 
+    
+        
+

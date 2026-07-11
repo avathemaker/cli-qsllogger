@@ -103,4 +103,5 @@ def mode():
 
 def help():
     print("use log to log qso\n")
-    print("print this\n")
+    print("use help to print this\n")
+    print("use exit to quit loger") 
