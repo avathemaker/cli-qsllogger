@@ -32,7 +32,7 @@ while True:
     func.freq()
     func.rsts()
     func.rstr()
-    
+    func.mode() 
 
     #testing
    ##print(hour)

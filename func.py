@@ -85,3 +85,15 @@ def rstr():
         f.write(sr)
     if right == "n":
         rstr()
+
+
+def mode():
+    print("what mode did you use")
+    s = input()
+    right = input("is this right y or n: ")
+    if right == "y":
+        cn = len(s)
+        sr = f"<mode:{cn}>{s}\n"
+        f.write(sr)
+    if right == "n":
+        mode()
