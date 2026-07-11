@@ -1,2 +1,2 @@
-fname = input("name the file")
-f = open(fname,"a")
+fname = input("name the fill:")
+f = open(f"{fname}.adi","a")
