@@ -104,4 +104,4 @@ def mode():
 def help():
     print("use log to log qso\n")
     print("use help to print this\n")
-    print("use exit to quit loger") 
+    print("use exit to quit loger\nuse usersetup to setup a new user\nuse sr to enter signle report \n use call to enter call sign \n use end to end qso \n use fr to enter freq") 

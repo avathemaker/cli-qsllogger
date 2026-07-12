@@ -87,6 +87,7 @@ while True:
         userfile.write(write)
         print("user saved")
  
-    
+    else: 
+        print("not valid")
         
 
